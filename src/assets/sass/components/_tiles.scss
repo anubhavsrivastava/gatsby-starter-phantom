@@ -6,6 +6,8 @@
 
 /* Tiles */
 
+@use "sass:math";
+
 .tiles {
   $gutter: _size(gutter);
   $duration: 0.5s;
@@ -22,7 +24,7 @@
       ('transform #{$duration} #{$ease}', 'opacity #{$duration} #{$ease}')
     );
     position: relative;
-    width: calc(#{(100% / 3)} - #{$gutter * 1});
+    width: calc(#{math.div(100%, 3)} - #{$gutter * 1});
     margin: $gutter 0 0 $gutter;
 
     > .image {
@@ -225,7 +227,7 @@
     margin: ($gutter * -1) 0 0 ($gutter * -1);
 
     article {
-      width: calc(#{(100% / 3)} - #{$gutter * 1});
+      width: calc(#{math.div(100%, 3)} - #{$gutter * 1});
       margin: $gutter 0 0 $gutter;
     }
   }
@@ -236,7 +238,7 @@
     margin: ($gutter * -1) 0 0 ($gutter * -1);
 
     article {
-      width: calc(#{(100% / 2)} - #{$gutter * 1});
+      width: calc(#{(100% * 0.5)} - #{$gutter * 1});
       margin: $gutter 0 0 $gutter;
     }
   }
@@ -247,7 +249,7 @@
     margin: ($gutter * -1) 0 0 ($gutter * -1);
 
     article {
-      width: calc(#{(100% / 2)} - #{$gutter * 1});
+      width: calc(#{(100% * 0.5)} - #{$gutter * 1});
       margin: $gutter 0 0 $gutter;
 
       &:hover {
